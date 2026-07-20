@@ -74,7 +74,6 @@
  :comment-exempt #{:aliased-namespace-symbol
                    :clojure-lsp/unused-public-var
                    :deprecated-namespace
-                   :deprecated-var
                    :discouraged-namespace
                    :discouraged-var
                    :duplicate-require
