@@ -94,7 +94,6 @@
                    :metabase/validate-deftest
                    :missing-docstring
                    :missing-protocol-method
-                   :reduce-without-init
                    :redundant-do
                    :syntax
                    :type-mismatch
