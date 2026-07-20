@@ -86,7 +86,6 @@
                    :metabase/validate-defendpoint-query-params-use-kebab-case
                    :metabase/validate-defendpoint-route-uses-kebab-case
                    :missing-docstring
-                   :missing-protocol-method
                    :redundant-do
                    :type-mismatch
                    :unresolved-namespace
