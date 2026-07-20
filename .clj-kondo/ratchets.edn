@@ -74,7 +74,6 @@
  :comment-exempt #{:aliased-namespace-symbol
                    :case-symbol-test
                    :clojure-lsp/unused-public-var
-                   :def-fn
                    :deprecated-namespace
                    :deprecated-var
                    :discouraged-java-method
