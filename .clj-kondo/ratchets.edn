@@ -91,7 +91,6 @@
                    :missing-docstring
                    :missing-protocol-method
                    :redundant-do
-                   :syntax
                    :type-mismatch
                    :unresolved-namespace
                    :unresolved-require
