@@ -75,7 +75,6 @@
                    :clojure-lsp/unused-public-var
                    :deprecated-namespace
                    :deprecated-var
-                   :discouraged-java-method
                    :discouraged-namespace
                    :discouraged-var
                    :duplicate-require
