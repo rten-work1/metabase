@@ -94,7 +94,6 @@
                    :type-mismatch
                    :unresolved-namespace
                    :unresolved-require
-                   :unresolved-symbol
                    :unused-alias
                    :unused-excluded-var
                    :unused-namespace
