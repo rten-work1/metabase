@@ -78,7 +78,6 @@
                    :discouraged-namespace
                    :discouraged-var
                    :duplicate-require
-                   :metabase/i-like-making-cams-eyes-bleed-with-horrifically-long-tests
                    :metabase/modules
                    :metabase/test-helpers-use-non-thread-safe-functions
                    :metabase/validate-defendpoint-has-response-schema
