@@ -96,7 +96,6 @@
                    :redundant-do
                    :syntax
                    :type-mismatch
-                   :unquote-not-syntax-quoted
                    :unresolved-namespace
                    :unresolved-require
                    :unresolved-symbol
