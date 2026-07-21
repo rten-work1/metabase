@@ -326,7 +326,7 @@
   :resolve-model         embeddings.provider/legacy-resolved-model
   :embed-texts           (fn [_ texts _opts] (get-mock-embeddings-batch texts))})
 
-;; read-only query; the bang-named datasource getter mutates nothing
+;; read-only query; the bang-named getter at most lazily initializes the shared pool
 #_{:clj-kondo/ignore [:metabase/test-helpers-use-non-thread-safe-functions]}
 (defn query-index [search-context]
   (:results (semantic.index/query-index (semantic.env/get-pgvector-datasource!) mock-index search-context)))
@@ -510,7 +510,7 @@
         step (fn [] (semantic.indexer/indexing-step pgvector mock-index-metadata mock-index indexing-state))]
     (while (do (step) (pos? (:last-novel-count @indexing-state))))))
 
-;; read-only existence check; the bang-named datasource getter mutates nothing
+;; read-only existence check; the bang-named getter at most lazily initializes the shared pool
 #_{:clj-kondo/ignore [:metabase/test-helpers-use-non-thread-safe-functions]}
 (defn table-exists-in-db?
   "Check if a table actually exists in the database"
@@ -520,7 +520,7 @@
       (semantic.util/table-exists? (semantic.env/get-pgvector-datasource!) (name table-name))
       (catch Exception _ false))))
 
-;; read-only pg_indexes lookup; the bang-named calls mutate nothing
+;; read-only pg_indexes lookup; the bang-named calls at most lazily initialize the shared pool
 #_{:clj-kondo/ignore [:metabase/test-helpers-use-non-thread-safe-functions]}
 (defn table-has-index?
   [table-name index-name]
@@ -533,7 +533,7 @@
         (-> result first vals first))
       (catch Exception _ false))))
 
-;; read-only pg_indexes lookup; the bang-named calls mutate nothing
+;; read-only pg_indexes lookup; the bang-named calls at most lazily initialize the shared pool
 #_{:clj-kondo/ignore [:metabase/test-helpers-use-non-thread-safe-functions]}
 (defn table-indexes
   "Map of index name -> pg_indexes indexdef for `table-name`; empty when the table does not exist."
@@ -544,7 +544,7 @@
                        ["SELECT indexname, indexdef FROM pg_indexes WHERE tablename = ?" (name table-name)]
                        {:builder-fn jdbc.rs/as-unqualified-lower-maps})))
 
-;; read-only pg_class lookup; the bang-named calls mutate nothing
+;; read-only pg_class lookup; the bang-named calls at most lazily initialize the shared pool
 #_{:clj-kondo/ignore [:metabase/test-helpers-use-non-thread-safe-functions]}
 (defn index-relfilenode
   "Return the on-disk relfilenode for the index named `index-name`, or nil if it doesn't exist. A stable
@@ -623,7 +623,7 @@
       (unwrap-column :text_search_vector)
       (unwrap-column :text_search_with_native_query_vector)))
 
-;; read-only count query; the bang-named calls mutate nothing
+;; read-only count query; the bang-named calls at most lazily initialize the shared pool
 #_{:clj-kondo/ignore [:metabase/test-helpers-use-non-thread-safe-functions]}
 (defn index-count
   "Count the number of documents in the index."
@@ -648,7 +648,7 @@
                       {:builder-fn jdbc.rs/as-unqualified-lower-maps})
        (mapv decode-embedding)))
 
-;; read-only select; the bang-named calls mutate nothing
+;; read-only select; the bang-named calls at most lazily initialize the shared pool
 #_{:clj-kondo/ignore [:metabase/test-helpers-use-non-thread-safe-functions]}
 (defn query-embeddings
   "Query the `mock-index` table and return the decoded `:embedding`s for the given `model`"
@@ -663,7 +663,7 @@
                       {:builder-fn jdbc.rs/as-unqualified-lower-maps})
        (mapv decode-embedding)))
 
-;; read-only select; the bang-named calls mutate nothing
+;; read-only select; the bang-named calls at most lazily initialize the shared pool
 #_{:clj-kondo/ignore [:metabase/test-helpers-use-non-thread-safe-functions]}
 (defn query-tsvectors
   "Query the `mock-index` table and return the unwrapped tsvector columns for the given `model`"
@@ -691,7 +691,7 @@
            (query-embeddings {:model "dashboard"
                               :model_id "456"})))))
 
-;; read-only assertions over the index table; the bang-named calls mutate nothing
+;; read-only assertions over the index table; the bang-named calls at most lazily initialize the shared pool
 #_{:clj-kondo/ignore [:metabase/test-helpers-use-non-thread-safe-functions]}
 (defn check-index-has-no-mock-docs []
   (let [{:keys [table-name]}     mock-index
