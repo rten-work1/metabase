@@ -71,7 +71,6 @@
                   :unresolved-var                          1
                   :unused-referred-var                     4}
  :comment-exempt #{:all
-                   :clojure-lsp/unused-public-var
                    :deprecated-namespace
                    :deprecated-var
                    :discouraged-namespace
