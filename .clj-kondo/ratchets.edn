@@ -78,7 +78,6 @@
                    :redundant-do
                    :syntax
                    :type-mismatch
-                   :uninitialized-var
                    :unquote-not-syntax-quoted
                    :unresolved-namespace
                    :unresolved-require
