@@ -3335,6 +3335,7 @@
            appearance
            audit-app
            embedding
+           metabot
            permissions
            premium-features
            enterprise/sso}
@@ -3344,6 +3345,7 @@
                     :model/Dashboard
                     :model/Database
                     :model/DatabaseRouter
+                    :model/EmbeddingTheme
                     :model/Sandbox
                     :model/Table
                     :model/Tenant}}
