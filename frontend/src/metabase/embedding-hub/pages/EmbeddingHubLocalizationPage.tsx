@@ -1,9 +1,9 @@
 import { t } from "ttag";
 
-import { SettingsPageWrapper } from "metabase/admin/components/SettingsSection";
 import { UpsellContentTranslation } from "metabase/admin/upsells";
 import { useHasTokenFeature } from "metabase/common/hooks";
 import { PLUGIN_CONTENT_TRANSLATION } from "metabase/plugins";
+import { SettingsPageWrapper } from "metabase/settings-components/SettingsSection";
 
 /**
  * Content translation only. It renders today *only* from the admin embedding

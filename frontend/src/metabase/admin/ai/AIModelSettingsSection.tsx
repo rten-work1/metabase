@@ -1,7 +1,7 @@
 import { t } from "ttag";
 
-import { SettingsSection } from "metabase/admin/components/SettingsSection";
 import { LlmModelPicker } from "metabase/metabot";
+import { SettingsSection } from "metabase/settings-components/SettingsSection";
 import { Stack } from "metabase/ui";
 
 export function AIModelSettingsSection({ id }: { id?: string }) {

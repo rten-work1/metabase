@@ -1,11 +1,11 @@
 import { t } from "ttag";
 
-import { SettingsPageWrapper } from "metabase/admin/components/SettingsSection";
 import { Link } from "metabase/common/components/Link";
 import { LoadingAndErrorWrapper } from "metabase/common/components/LoadingAndErrorWrapper";
 import { useHasTokenFeature } from "metabase/common/hooks";
 import { PLUGIN_AUTH_PROVIDERS } from "metabase/plugins";
 import { useGetAdminSettingsDetailsQuery, useSetting } from "metabase/settings";
+import { SettingsPageWrapper } from "metabase/settings-components/SettingsSection";
 import { Card, Group, Icon, Stack, Text, Title } from "metabase/ui";
 
 import { AuthenticationUpsellPage } from "../upsells";

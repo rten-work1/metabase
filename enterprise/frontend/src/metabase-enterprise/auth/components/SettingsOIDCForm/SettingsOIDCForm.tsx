@@ -3,11 +3,6 @@ import { useCallback, useEffect, useMemo, useRef } from "react";
 import { t } from "ttag";
 import * as Yup from "yup";
 
-import {
-  SettingsPageWrapper,
-  SettingsSection,
-} from "metabase/admin/components/SettingsSection";
-import { AdminSettingInput } from "metabase/admin/settings/components/widgets/AdminSettingInput";
 import { GroupMappingsWidgetView } from "metabase/admin/settings/components/widgets/GroupMappingsWidget/GroupMappingsWidgetView";
 import {
   useClearGroupMembershipMutation,
@@ -29,6 +24,11 @@ import {
 import { useSelector } from "metabase/redux";
 import { getApplicationName } from "metabase/selectors/whitelabel";
 import { useSetting } from "metabase/settings";
+import { AdminSettingInput } from "metabase/settings-components/AdminSettingInput";
+import {
+  SettingsPageWrapper,
+  SettingsSection,
+} from "metabase/settings-components/SettingsSection";
 import { Button, Flex, Stack, Text } from "metabase/ui";
 import {
   type CustomOidcConfig,

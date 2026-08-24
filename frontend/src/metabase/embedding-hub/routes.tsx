@@ -1,6 +1,6 @@
-import { EmbeddingThemeEditorApp } from "metabase/admin/embedding/components/ThemeEditor";
 import { getRoutes as getAdminPermissionsRoutes } from "metabase/admin/permissions/routes";
 import { UpsellTenants } from "metabase/admin/upsells";
+import { EmbeddingThemeEditorApp } from "metabase/embedding/themes/components/ThemeEditor";
 import { PLUGIN_TENANTS } from "metabase/plugins";
 import { Navigate, Route } from "metabase/router";
 import * as Urls from "metabase/urls";

@@ -1,11 +1,6 @@
 import { t } from "ttag";
 import _ from "underscore";
 
-import {
-  SettingsPageWrapper,
-  SettingsSection,
-} from "metabase/admin/components/SettingsSection";
-import { AdminSettingInput } from "metabase/admin/settings/components/widgets/AdminSettingInput";
 import { GroupMappingsWidget } from "metabase/admin/settings/components/widgets/GroupMappingsWidget";
 import { getExtraFormFieldProps } from "metabase/admin/settings/utils";
 import { LoadingAndErrorWrapper } from "metabase/common/components/LoadingAndErrorWrapper";
@@ -24,6 +19,11 @@ import {
   useAdminSetting,
   useGetAdminSettingsDetailsQuery,
 } from "metabase/settings";
+import { AdminSettingInput } from "metabase/settings-components/AdminSettingInput";
+import {
+  SettingsPageWrapper,
+  SettingsSection,
+} from "metabase/settings-components/SettingsSection";
 import { Flex, Stack } from "metabase/ui";
 import { provisioningOptions } from "metabase-enterprise/auth/utils";
 import type {

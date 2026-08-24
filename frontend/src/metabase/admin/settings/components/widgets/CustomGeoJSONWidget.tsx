@@ -17,6 +17,7 @@ import AdminS from "metabase/css/admin.module.css";
 import ButtonsS from "metabase/css/components/buttons.module.css";
 import CS from "metabase/css/core/index.css";
 import { useAdminSetting } from "metabase/settings";
+import { SettingHeader } from "metabase/settings-components/SettingHeader";
 import {
   Box,
   Button,
@@ -34,8 +35,6 @@ import type {
   CustomGeoJSONSetting,
   GeoJSONData,
 } from "metabase-types/api";
-
-import { SettingHeader } from "../SettingHeader";
 
 export const CustomGeoJSONWidget = () => {
   const [map, setMap] = useState<CustomGeoJSONMap | undefined>();

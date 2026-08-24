@@ -4,10 +4,6 @@ import _ from "underscore";
 import type { TestConfig } from "yup";
 import * as Yup from "yup";
 
-import {
-  SettingsPageWrapper,
-  SettingsSection,
-} from "metabase/admin/components/SettingsSection";
 import { GroupMappingsWidget } from "metabase/admin/settings/components/widgets/GroupMappingsWidget";
 import { getExtraFormFieldProps } from "metabase/admin/settings/utils";
 import { LoadingAndErrorWrapper } from "metabase/common/components/LoadingAndErrorWrapper";
@@ -25,6 +21,10 @@ import {
   useGetAdminSettingsDetailsQuery,
   useGetSettingsQuery,
 } from "metabase/settings";
+import {
+  SettingsPageWrapper,
+  SettingsSection,
+} from "metabase/settings-components/SettingsSection";
 import { Box, Divider, Flex, Group, Radio, Stack } from "metabase/ui";
 import type { EnterpriseSettings, Settings } from "metabase-types/api";
 

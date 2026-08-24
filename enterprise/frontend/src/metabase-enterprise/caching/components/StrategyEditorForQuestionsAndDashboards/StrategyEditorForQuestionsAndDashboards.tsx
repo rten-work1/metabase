@@ -2,7 +2,6 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { t } from "ttag";
 import _ from "underscore";
 
-import { SettingsPageWrapper } from "metabase/admin/components/SettingsSection";
 import { StrategyForm } from "metabase/admin/performance/components/StrategyForm";
 import { useCacheConfigs } from "metabase/admin/performance/hooks/useCacheConfigs";
 import { useConfirmIfFormIsDirty } from "metabase/admin/performance/hooks/useConfirmIfFormIsDirty";
@@ -12,6 +11,7 @@ import { Sidesheet } from "metabase/common/components/Sidesheet";
 import { Table } from "metabase/common/components/Table";
 import type { ColumnItem } from "metabase/common/components/Table/types";
 import { usePagination } from "metabase/common/hooks/use-pagination";
+import { SettingsPageWrapper } from "metabase/settings-components/SettingsSection";
 import { Center, Flex, Repeat, Skeleton, Stack } from "metabase/ui";
 import type { CacheSortColumn, CacheableModel } from "metabase-types/api";
 import type { SortDirection } from "metabase-types/api/sorting";
