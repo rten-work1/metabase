@@ -71,9 +71,7 @@
                   :unresolved-symbol                       19
                   :unresolved-var                          1
                   :unused-referred-var                     4}
- :comment-exempt #{:clojure-lsp/unused-public-var
-                   :deprecated-namespace
-                   :deprecated-var
+ :comment-exempt #{:deprecated-namespace
                    :discouraged-namespace
                    :discouraged-var
                    :metabase/modules
