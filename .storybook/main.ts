@@ -24,13 +24,6 @@ const stories = process.env.STORYBOOK_STORIES_FILTER
 
 const config: StorybookConfig = {
   stories,
-  docs: {
-    mdxPluginOptions: {
-      mdxCompileOptions: {
-        remarkPlugins: [remarkGfm],
-      },
-    },
-  },
   staticDirs: [
     "../resources/frontend_client",
     "./msw-public",
@@ -41,7 +34,22 @@ const config: StorybookConfig = {
   ],
   addons: [
     "@storybook/addon-webpack5-compiler-babel",
-    "@storybook/addon-essentials",
+    {
+      name: "@storybook/addon-essentials",
+      options: {
+        docs: false,
+      },
+    },
+    {
+      name: "@storybook/addon-docs",
+      options: {
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [remarkGfm],
+          },
+        },
+      },
+    },
     "@storybook/addon-interactions",
     "@storybook/addon-links",
     "@storybook/addon-a11y",
